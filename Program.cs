@@ -106,17 +106,5 @@ namespace OOP_Kelompok2
                 }
             }
         }
-
-        private static int GetValidInput(int min, int max)
-        {
-            while (true)
-            {
-                if (int.TryParse(Console.ReadLine(), out int choice) && choice >= min && choice <= max)
-                {
-                    return choice;
-                }
-                Console.WriteLine($"Please enter a valid number between {min} and {max}.");
-            }
-        }
     }
 }
