@@ -1,0 +1,60 @@
+E:\OOP_Kuliah_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.exe
+E:\OOP_Kuliah_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.deps.json
+E:\OOP_Kuliah_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.runtimeconfig.json
+E:\OOP_Kuliah_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.dll
+E:\OOP_Kuliah_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.pdb
+E:\OOP_Kuliah_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.GeneratedMSBuildEditorConfig.editorconfig
+E:\OOP_Kuliah_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.AssemblyInfoInputs.cache
+E:\OOP_Kuliah_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.AssemblyInfo.cs
+E:\OOP_Kuliah_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.csproj.CoreCompileInputs.cache
+E:\OOP_Kuliah_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.sourcelink.json
+E:\OOP_Kuliah_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.dll
+E:\OOP_Kuliah_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\refint\OOP_Kelompok2.dll
+E:\OOP_Kuliah_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.pdb
+E:\OOP_Kuliah_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.genruntimeconfig.cache
+E:\OOP_Kuliah_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\ref\OOP_Kelompok2.dll
+C:\Kuliah\OOP\pak firdaus\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Kuliah\OOP\pak firdaus\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.AssemblyInfoInputs.cache
+C:\Kuliah\OOP\pak firdaus\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.AssemblyInfo.cs
+C:\Kuliah\OOP\pak firdaus\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.csproj.CoreCompileInputs.cache
+C:\Kuliah\OOP\pak firdaus\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.sourcelink.json
+C:\Kuliah\OOP\pak firdaus\OOP_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.exe
+C:\Kuliah\OOP\pak firdaus\OOP_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.deps.json
+C:\Kuliah\OOP\pak firdaus\OOP_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.runtimeconfig.json
+C:\Kuliah\OOP\pak firdaus\OOP_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.dll
+C:\Kuliah\OOP\pak firdaus\OOP_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.pdb
+C:\Kuliah\OOP\pak firdaus\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.dll
+C:\Kuliah\OOP\pak firdaus\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\refint\OOP_Kelompok2.dll
+C:\Kuliah\OOP\pak firdaus\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.pdb
+C:\Kuliah\OOP\pak firdaus\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.genruntimeconfig.cache
+C:\Kuliah\OOP\pak firdaus\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\ref\OOP_Kelompok2.dll
+C:\Users\Musyaffa\Documents\OOP\Tugas OOP Kelompok 2\OOP_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.exe
+C:\Users\Musyaffa\Documents\OOP\Tugas OOP Kelompok 2\OOP_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.deps.json
+C:\Users\Musyaffa\Documents\OOP\Tugas OOP Kelompok 2\OOP_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.runtimeconfig.json
+C:\Users\Musyaffa\Documents\OOP\Tugas OOP Kelompok 2\OOP_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.dll
+C:\Users\Musyaffa\Documents\OOP\Tugas OOP Kelompok 2\OOP_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.pdb
+C:\Users\Musyaffa\Documents\OOP\Tugas OOP Kelompok 2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Musyaffa\Documents\OOP\Tugas OOP Kelompok 2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.AssemblyInfoInputs.cache
+C:\Users\Musyaffa\Documents\OOP\Tugas OOP Kelompok 2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.AssemblyInfo.cs
+C:\Users\Musyaffa\Documents\OOP\Tugas OOP Kelompok 2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.csproj.CoreCompileInputs.cache
+C:\Users\Musyaffa\Documents\OOP\Tugas OOP Kelompok 2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.sourcelink.json
+C:\Users\Musyaffa\Documents\OOP\Tugas OOP Kelompok 2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.dll
+C:\Users\Musyaffa\Documents\OOP\Tugas OOP Kelompok 2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\refint\OOP_Kelompok2.dll
+C:\Users\Musyaffa\Documents\OOP\Tugas OOP Kelompok 2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.pdb
+C:\Users\Musyaffa\Documents\OOP\Tugas OOP Kelompok 2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.genruntimeconfig.cache
+C:\Users\Musyaffa\Documents\OOP\Tugas OOP Kelompok 2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\ref\OOP_Kelompok2.dll
+D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.exe
+D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.deps.json
+D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.runtimeconfig.json
+D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.dll
+D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\bin\Debug\net8.0\OOP_Kelompok2.pdb
+D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.AssemblyInfoInputs.cache
+D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.AssemblyInfo.cs
+D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.csproj.CoreCompileInputs.cache
+D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.sourcelink.json
+D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.dll
+D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\refint\OOP_Kelompok2.dll
+D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.pdb
+D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.genruntimeconfig.cache
+D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\ref\OOP_Kelompok2.dll

@@ -1,0 +1,38 @@
+using System;
+using System.Windows.Forms;
+
+namespace OOP_Kelompok2
+{
+    public class MainForm : Form
+    {
+        private Label lblPlayerInfo;
+        private Button btnCreatePlayer;
+
+        public MainForm()
+        {
+            // Pengaturan form
+            this.Text = "Game Player Builder";
+            this.Width = 400;
+            this.Height = 300;
+
+            // Label untuk menampilkan informasi pemain
+            lblPlayerInfo = new Label()
+            {
+                Text = "Player Info: ",
+                AutoSize = true,
+                Location = new System.Drawing.Point(20, 20)
+            };
+            this.Controls.Add(lblPlayerInfo);
+
+            // Tombol untuk membuat pemain baru
+            btnCreatePlayer = new Button()
+            {
+                Text = "Create Player",
+                Location = new System.Drawing.Point(20, 60),
+                Width = 120
+            };
+            btnCreatePlayer.Click += BtnCreatePlayer_Click;
+            this.Controls.Add(btnCreatePlayer);
+        }
+    }
+}
