@@ -58,3 +58,18 @@ D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelo
 D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.pdb
 D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\OOP_Kelompok2.genruntimeconfig.cache
 D:\Salim\Semester 3\Pemrograman Berorientasi Objek\FiturTambahanGame\FondasiKelompok2\OOP_Kelompok2\OOP_Kelompok2\obj\Debug\net8.0\ref\OOP_Kelompok2.dll
+C:\Users\raiha\Documents\Kuliah\Semester 3\OOP2\Proyek Kuliah\Kelompok10\bin\Debug\net8.0\OOP_Kelompok2.exe
+C:\Users\raiha\Documents\Kuliah\Semester 3\OOP2\Proyek Kuliah\Kelompok10\bin\Debug\net8.0\OOP_Kelompok2.deps.json
+C:\Users\raiha\Documents\Kuliah\Semester 3\OOP2\Proyek Kuliah\Kelompok10\bin\Debug\net8.0\OOP_Kelompok2.runtimeconfig.json
+C:\Users\raiha\Documents\Kuliah\Semester 3\OOP2\Proyek Kuliah\Kelompok10\bin\Debug\net8.0\OOP_Kelompok2.dll
+C:\Users\raiha\Documents\Kuliah\Semester 3\OOP2\Proyek Kuliah\Kelompok10\bin\Debug\net8.0\OOP_Kelompok2.pdb
+C:\Users\raiha\Documents\Kuliah\Semester 3\OOP2\Proyek Kuliah\Kelompok10\obj\Debug\net8.0\OOP_Kelompok2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\raiha\Documents\Kuliah\Semester 3\OOP2\Proyek Kuliah\Kelompok10\obj\Debug\net8.0\OOP_Kelompok2.AssemblyInfoInputs.cache
+C:\Users\raiha\Documents\Kuliah\Semester 3\OOP2\Proyek Kuliah\Kelompok10\obj\Debug\net8.0\OOP_Kelompok2.AssemblyInfo.cs
+C:\Users\raiha\Documents\Kuliah\Semester 3\OOP2\Proyek Kuliah\Kelompok10\obj\Debug\net8.0\OOP_Kelompok2.csproj.CoreCompileInputs.cache
+C:\Users\raiha\Documents\Kuliah\Semester 3\OOP2\Proyek Kuliah\Kelompok10\obj\Debug\net8.0\OOP_Kelompok2.sourcelink.json
+C:\Users\raiha\Documents\Kuliah\Semester 3\OOP2\Proyek Kuliah\Kelompok10\obj\Debug\net8.0\OOP_Kelompok2.dll
+C:\Users\raiha\Documents\Kuliah\Semester 3\OOP2\Proyek Kuliah\Kelompok10\obj\Debug\net8.0\refint\OOP_Kelompok2.dll
+C:\Users\raiha\Documents\Kuliah\Semester 3\OOP2\Proyek Kuliah\Kelompok10\obj\Debug\net8.0\OOP_Kelompok2.pdb
+C:\Users\raiha\Documents\Kuliah\Semester 3\OOP2\Proyek Kuliah\Kelompok10\obj\Debug\net8.0\OOP_Kelompok2.genruntimeconfig.cache
+C:\Users\raiha\Documents\Kuliah\Semester 3\OOP2\Proyek Kuliah\Kelompok10\obj\Debug\net8.0\ref\OOP_Kelompok2.dll

@@ -60,8 +60,10 @@ namespace OOP_Kelompok2
 
         static void Update()
         {
-            
-            Story.StoryPath(player1);            
+            for (int round = 1; round < 4; round++)
+            {
+                Story.StoryPath(player1, round);
+            }      
             Story.FinalBossEncounter(player1);
         }
 
@@ -79,6 +81,41 @@ namespace OOP_Kelompok2
             }
 
             inventory.UseItem(choice - 1, player1); 
+        }
+
+        public static void ShowStatTradeShop()
+        {
+            StatTradeShop statTradeShop = new StatTradeShop();
+            bool shopping = true;
+
+            while (shopping)
+            {
+                statTradeShop.DisplayItems();
+                Console.WriteLine("Choose an item to buy (or enter 0 to exit):");
+                int choice = GetValidInput(0, statTradeShop.ItemsCount);
+
+                if (choice == 0)
+                {
+                    shopping = false;
+                    Console.WriteLine("Exiting stat trade shop.");
+                }
+                else
+                {
+                    statTradeShop.BuyItem(choice - 1, player1, inventory);
+                }
+            }
+        }
+
+        private static int GetValidInput(int min, int max)
+        {
+            while (true)
+            {
+                if (int.TryParse(Console.ReadLine(), out int choice) && choice >= min && choice <= max)
+                {
+                    return choice;
+                }
+                Console.WriteLine($"Please enter a valid number between {min} and {max}.");
+            }
         }
     }
 }

@@ -9,11 +9,12 @@ namespace OOP_Kelompok2
         public Emotion EmotionType { get; set; }
         public bool IsStunned { get; set; } = false;
 
-        public void Attack(Player player)
+        public void AttackPlayer(Player player)
         {
+            int damage = EmotionDamageCalculator.CalculateDamage(AttackPower, EmotionType, player.EmotionType);
             Console.WriteLine($"{Name} attacks {player.Name}!");
-            player.Heart -= AttackPower;
-            Console.WriteLine($"{player.Name} takes {AttackPower} damage. Remaining Health: {player.Heart}");
+            player.Heart -= damage;
+            Console.WriteLine($"{player.Name} takes {damage} damage. Remaining Health: {player.Heart}");
         }
 
         public void DisplayStatus()

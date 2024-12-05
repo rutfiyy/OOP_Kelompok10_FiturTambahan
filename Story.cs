@@ -36,7 +36,7 @@ namespace OOP_Kelompok2
             }
         }
 
-        public static void StoryPath(Player player)
+        public static void StoryPath(Player player, int round)
         {
             Console.WriteLine("\n=== Story Path ===");
             Console.WriteLine("After wandering, you encounter a forked path in the dreamscape.");
@@ -45,17 +45,35 @@ namespace OOP_Kelompok2
                 Console.WriteLine($"{path.Key}. {path.Value.PathDescription}");
             }
 
-            int choice = GetValidInput(1, _storyPaths.Count);
-            var selectedPath = _storyPaths[choice];
-            Console.WriteLine($"\nYou chose to {selectedPath.PathDescription.ToLower()}.");
+            int choice;
+            if (round == 2) 
+            {
+                Console.WriteLine("4. Negotiate with the souls of the lost."); 
+                choice = GetValidInput(1, 4);
+            }
+            else choice = GetValidInput(1, _storyPaths.Count);
+            
 
-            // Create the enemy based on the selected path
-            List<Enemy> enemies = EnemyFactory.CreateEnemies(selectedPath.EnemyNames);
+            if (choice == 4)
+            {
+                Console.WriteLine("\nYou attempt to negotiate with the lost souls.");
+                Console.WriteLine("\nThe souls offer you a trade.");
+                Program.ShowStatTradeShop();
+                return;
+            }
+            else 
+            {
+                var selectedPath = _storyPaths[choice];
+                Console.WriteLine($"\nYou chose to {selectedPath.PathDescription.ToLower()}.");
 
-            //Console.WriteLine($"You encounter *{enemy.Name}*!");
+                // Create the enemy based on the selected path
+                List<Enemy> enemies = EnemyFactory.CreateEnemies(selectedPath.EnemyNames);
 
-            // Start the battle with the selected path's enemy
-            StartBattle(player, enemies);
+                //Console.WriteLine($"You encounter *{enemy.Name}*!");
+
+                // Start the battle with the selected path's enemy
+                StartBattle(player, enemies);
+            }
         }
 
         public static void FinalBossEncounter(Player player)
@@ -167,7 +185,7 @@ namespace OOP_Kelompok2
                     }
                     else
                     {
-                        enemies[i].Attack(player);
+                        enemies[i].AttackPlayer(player);
                     }
                 }
 

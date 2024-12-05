@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Salim\\Semester 3\\Pemrograman Berorientasi Objek\\FiturTambahanGame\\FondasiKelompok2\\OOP_KELOMPOK2\\OOP_KELOMPOK2\\OOP_Kelompok2.csproj": {}
+    "C:\\Users\\raiha\\Documents\\Kuliah\\Semester 3\\OOP2\\Proyek Kuliah\\Kelompok10\\OOP_Kelompok2.csproj": {}
   },
   "projects": {
-    "D:\\Salim\\Semester 3\\Pemrograman Berorientasi Objek\\FiturTambahanGame\\FondasiKelompok2\\OOP_KELOMPOK2\\OOP_KELOMPOK2\\OOP_Kelompok2.csproj": {
+    "C:\\Users\\raiha\\Documents\\Kuliah\\Semester 3\\OOP2\\Proyek Kuliah\\Kelompok10\\OOP_Kelompok2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Salim\\Semester 3\\Pemrograman Berorientasi Objek\\FiturTambahanGame\\FondasiKelompok2\\OOP_KELOMPOK2\\OOP_KELOMPOK2\\OOP_Kelompok2.csproj",
+        "projectUniqueName": "C:\\Users\\raiha\\Documents\\Kuliah\\Semester 3\\OOP2\\Proyek Kuliah\\Kelompok10\\OOP_Kelompok2.csproj",
         "projectName": "OOP_Kelompok2",
-        "projectPath": "D:\\Salim\\Semester 3\\Pemrograman Berorientasi Objek\\FiturTambahanGame\\FondasiKelompok2\\OOP_KELOMPOK2\\OOP_KELOMPOK2\\OOP_Kelompok2.csproj",
-        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\Salim\\Semester 3\\Pemrograman Berorientasi Objek\\FiturTambahanGame\\FondasiKelompok2\\OOP_KELOMPOK2\\OOP_KELOMPOK2\\obj\\",
+        "projectPath": "C:\\Users\\raiha\\Documents\\Kuliah\\Semester 3\\OOP2\\Proyek Kuliah\\Kelompok10\\OOP_Kelompok2.csproj",
+        "packagesPath": "C:\\Users\\raiha\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\raiha\\Documents\\Kuliah\\Semester 3\\OOP2\\Proyek Kuliah\\Kelompok10\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\raiha\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"

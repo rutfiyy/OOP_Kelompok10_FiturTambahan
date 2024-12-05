@@ -25,9 +25,7 @@ namespace OOP_Kelompok2
             if (enemyIndex >= 0 && enemyIndex < _enemies.Count)
             {
                 var enemy = _enemies[enemyIndex]; // Select the target enemy
-                Console.WriteLine($"{_player.Name} attacks {enemy.Name}!");
-                enemy.Heart = Math.Max(enemy.Heart - _player.Attack, 0); // Subtract player's attack from enemy's health
-                Console.WriteLine($"{enemy.Name} takes {_player.Attack} damage. Remaining Health: {enemy.Heart}");
+                _player.AttackEnemy(enemy); 
             }
             else
             {

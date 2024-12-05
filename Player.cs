@@ -15,6 +15,14 @@ namespace OOP_Kelompok2
         public int Exp { get; set; } = 0;
         public Emotion EmotionType { get; set; } = Emotion.Neutral;
 
+        public void AttackEnemy(Enemy enemy)
+        {
+            int damage = EmotionDamageCalculator.CalculateDamage(Attack, EmotionType, enemy.EmotionType);
+            Console.WriteLine($"{Name} attacks {enemy.Name}!");
+            enemy.Heart = Math.Max(enemy.Heart - damage, 0); // Subtract calculated damage from enemy's health
+            Console.WriteLine($"{enemy.Name} takes {damage} damage. Remaining Health: {enemy.Heart}");
+        }
+        
         public void GainExp(int amount)
         {
             Exp += amount;
