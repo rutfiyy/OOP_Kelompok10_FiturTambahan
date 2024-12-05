@@ -41,19 +41,17 @@ namespace OOP_Kelompok2
         public static void StoryPath(Player player, int round)
         {
             string prompt = "\n=== Story Path ===\nAfter wandering, you encounter a forked path in the dreamscape.";
-            string[] options = { "Approach the broken clock tower", "Enter the desolate flower field", "Cross the foggy bridge"};
-            Menu pathMenu = new Menu(prompt, options);
-            int choice = pathMenu.Run();
+            List<string> options = new List<string>{ "Approach the broken clock tower", "Enter the desolate flower field", "Cross the foggy bridge"};
 
             if (round == 2) 
             {
-                Console.WriteLine("4. Negotiate with the souls of the lost."); 
-                choice = GetValidInput(1, 4);
+                options.Add("Negotiate with the souls of the lost");
             }
-            else choice = GetValidInput(1, _storyPaths.Count);
             
+            Menu pathMenu = new Menu(prompt, options.ToArray());
+            int choice = pathMenu.Run();
 
-            if (choice == 4)
+            if (choice == 3)
             {
                 Console.WriteLine("\nYou attempt to negotiate with the lost souls.");
                 Console.WriteLine("\nThe souls offer you a trade.");
@@ -62,15 +60,13 @@ namespace OOP_Kelompok2
             }
             else 
             {
-                var selectedPath = _storyPaths[choice];
+                var selectedPath = _storyPaths[choice + 1];
                 Console.WriteLine($"\nYou chose to {selectedPath.PathDescription.ToLower()}.");
                 Console.WriteLine("Press Enter to continue...");
                 Console.ReadLine();
 
                 // Create the enemy based on the selected path
                 List<Enemy> enemies = EnemyFactory.CreateEnemies(selectedPath.EnemyNames);
-
-                //Console.WriteLine($"You encounter *{enemy.Name}*!");
 
                 // Start the battle with the selected path's enemy
                 StartBattle(player, enemies);
@@ -149,7 +145,7 @@ namespace OOP_Kelompok2
                             continue; // Return to the main menu
                         }
 
-                        battleSystem.ExecuteAttackStrategy(enemyChoice - 1); // Attack the selected enemy
+                        battleSystem.ExecuteAttackStrategy(enemyChoice); // Attack the selected enemy
                         break;
 
                     case 1:
@@ -165,8 +161,17 @@ namespace OOP_Kelompok2
                         continue;
 
                     case 3:
-                        Console.WriteLine("You escaped the battle.");
-                        return;
+                        // Attempt to escape
+                        if (AttemptEscape(player))
+                        {
+                            Console.WriteLine("You successfully escaped the battle.");
+                            return;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Escape attempt failed!");
+                        }
+                        break;
 
                     default:
                         Console.WriteLine("Invalid choice! Please select a valid option.");
@@ -237,17 +242,11 @@ namespace OOP_Kelompok2
             }
         }
 
-        private static int GetValidInput(int min, int max)
+        private static bool AttemptEscape(Player player)
         {
-            int choice;
-            while (true)
-            {
-                if (int.TryParse(Console.ReadLine(), out choice) && choice >= min && choice <= max)
-                {
-                    return choice;
-                }
-                Console.WriteLine($"Please enter a number between {min} and {max}.");
-            }
+            Random random = new Random();
+            int escapeChance = random.Next(0, 100);
+            return escapeChance < player.Luck;
         }
     }
 }

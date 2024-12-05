@@ -17,21 +17,24 @@ namespace OOP_Kelompok2
 
             while (skillMenuActive)
             {
-                Console.WriteLine("\nChoose a skill (or enter 0 to exit):");
+                List<string> skillOptionsList = new List<string>();
                 for (int i = 0; i < _skills.Count; i++)
                 {
-                    Console.WriteLine($"{i + 1}. {_skills[i].GetType().Name} - Juice Cost: {_skills[i].GetCost()}");
+                    skillOptionsList.Add($"{_skills[i].GetType().Name} - Juice Cost: {_skills[i].GetCost()}");
                 }
+                skillOptionsList.Add("Exit");
 
-                int choice = GetValidInput(0, _skills.Count); // Allow user to enter 0 to exit
+                string[] skillOptions = skillOptionsList.ToArray();
+                Menu skillMenu = new Menu("Select a skill to use:", skillOptions);
+                int choice = skillMenu.Run();
 
-                if (choice == 0)
+                if (choice == _skills.Count)
                 {
                     Console.WriteLine("Exiting skill menu.");
                     return false; // Return false to indicate the player canceled the skill action
                 }
 
-                var selectedSkill = _skills[choice - 1];
+                var selectedSkill = _skills[choice];
                 var isTargetEnemy = selectedSkill.IsTargetEnemy();
 
                 if (player.Juice < selectedSkill.GetCost())
@@ -43,17 +46,16 @@ namespace OOP_Kelompok2
                     if (isTargetEnemy)
                     {
                         // Ask player to choose the enemy for the skill
-                        List<string> skillOptionsList = new List<string>();
+                        List<string> enemyOptions = new List<string>();
                         string prompt = "Select an enemy to attack (or enter 0 to cancel):";
                         
                         for (int i = 0; i < enemies.Count; i++)
                         {
-                            skillOptionsList.Add(enemies[i].Name);
+                            enemyOptions.Add(enemies[i].Name);
                         }
-                        skillOptionsList.Add("Exit");
+                        enemyOptions.Add("Exit");
 
-                        string[] skillOptions = skillOptionsList.ToArray();
-                        Menu attackMenu = new Menu(prompt, skillOptions);
+                        Menu attackMenu = new Menu(prompt, enemyOptions.ToArray());
                         int enemyChoice = attackMenu.Run();
 
                         if (enemyChoice == enemies.Count)
@@ -62,7 +64,7 @@ namespace OOP_Kelompok2
                             return false; // Return false to indicate the action was canceled
                         }
                         // Execute the selected skill on the chosen enemy
-                        _battleSystem.ExecuteSkillStrategy(player, enemyChoice - 1, selectedSkill);
+                        _battleSystem.ExecuteSkillStrategy(player, enemyChoice, selectedSkill);
                     }else
                     {
                         _battleSystem.ExecuteSkillStrategy(player, 0, selectedSkill);

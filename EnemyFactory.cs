@@ -24,6 +24,8 @@ namespace OOP_Kelompok2
                         Heart = 60,
                         AttackPower = 15,
                         Exp = 30,
+                        HitRate = 80,
+                        Luck = 10,
                         EmotionType = Emotion.Sad
                     };
                 case "lost petal":
@@ -33,6 +35,8 @@ namespace OOP_Kelompok2
                         Heart = 40,
                         AttackPower = 10,
                         Exp = 10,
+                        HitRate = 90,
+                        Luck = 5,
                         EmotionType = Emotion.Happy
                     };
                 case "haunting shade":
@@ -42,6 +46,8 @@ namespace OOP_Kelompok2
                         Heart = 30,
                         AttackPower = 8,
                         Exp = 8,
+                        HitRate = 95,
+                        Luck = 2,
                         EmotionType = Emotion.Angry
                     };
                 case "memento keeper":
@@ -51,6 +57,8 @@ namespace OOP_Kelompok2
                         Heart = 120,
                         AttackPower = 25,
                         Exp = 50,
+                        HitRate = 90,
+                        Luck = 30,
                         EmotionType = Emotion.Neutral
                     };
                 default:
@@ -61,6 +69,8 @@ namespace OOP_Kelompok2
                         Heart = 30,
                         AttackPower = 5,
                         Exp = 5,
+                        HitRate = 70,
+                        Luck = 5,
                         EmotionType = Emotion.Neutral
                     };
             }

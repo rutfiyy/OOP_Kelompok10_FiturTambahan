@@ -14,10 +14,24 @@ namespace OOP_Kelompok2
         public int Level { get; set; } = 1;
         public int Exp { get; set; } = 0;
         public Emotion EmotionType { get; set; } = Emotion.Neutral;
+        private Random _random = new Random();
 
         public void AttackEnemy(Enemy enemy)
         {
+            if (_random.Next(0, 100) > HitRate) // Miss chance
+            {
+                Console.WriteLine($"{Name} misses the attack!");
+                return;
+            }
+
             int damage = EmotionDamageCalculator.CalculateDamage(Attack, EmotionType, enemy.EmotionType);
+
+            if (_random.Next(0, 100) < Luck) // Critical hit chance
+            {
+                damage *= 2;
+                Console.WriteLine("Critical Hit!");
+            }
+
             Console.WriteLine($"{Name} attacks {enemy.Name}!");
             enemy.Heart = Math.Max(enemy.Heart - damage, 0); // Subtract calculated damage from enemy's health
             Console.WriteLine($"{enemy.Name} takes {damage} damage. Remaining Health: {enemy.Heart}");

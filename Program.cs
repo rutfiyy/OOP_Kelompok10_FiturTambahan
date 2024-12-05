@@ -69,18 +69,18 @@ namespace OOP_Kelompok2
 
         public static void UseInventoryItem()
         {
-            Console.WriteLine("\n=== Inventory ===");
-            inventory.DisplayInventory();
-            Console.WriteLine("Choose an item to use (enter the number):");
+            string prompt = "\n=== Inventory ===\nChoose an item to use:";
+            string[] inventoryItems = inventory.GetInventoryItems();
+            Menu inventoryMenu = new Menu(prompt, inventoryItems);
 
-            int choice;
-            if (!int.TryParse(Console.ReadLine(), out choice) || choice <= 0 || choice > inventory.Count)
+            int choice = inventoryMenu.Run();
+            if (choice == inventoryItems.Length - 1)
             {
-                Console.WriteLine("Invalid choice. Returning to battle.");
+                Console.WriteLine("Exiting Inventory.");
                 return;
             }
 
-            inventory.UseItem(choice - 1, player1); 
+            inventory.UseItem(choice, player1); 
         }
 
         public static void ShowStatTradeShop()
@@ -90,18 +90,19 @@ namespace OOP_Kelompok2
 
             while (shopping)
             {
+                string[] itemsForSale = statTradeShop.GetItemsForSale();
+                Menu statTradeShopMenu = new Menu("\nChoose an item to buy", itemsForSale);
                 statTradeShop.DisplayItems();
-                Console.WriteLine("Choose an item to buy (or enter 0 to exit):");
-                int choice = GetValidInput(0, statTradeShop.ItemsCount);
+                int choice = statTradeShopMenu.Run();
 
-                if (choice == 0)
+                if (choice == itemsForSale.Length - 1)
                 {
                     shopping = false;
                     Console.WriteLine("Exiting stat trade shop.");
                 }
                 else
                 {
-                    statTradeShop.BuyItem(choice - 1, player1, inventory);
+                    statTradeShop.BuyItem(choice, player1, inventory);
                 }
             }
         }

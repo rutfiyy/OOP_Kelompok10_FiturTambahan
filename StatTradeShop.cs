@@ -19,6 +19,17 @@ namespace OOP_Kelompok2
             };
         }
 
+        public string[] GetItemsForSale()
+        {
+            List<string> itemDescriptions = new List<string>();
+            for (int i = 0; i < _itemsForSale.Count; i++)
+            {
+                itemDescriptions.Add($"{_itemsForSale[i].Name} - {_itemsForSale[i].Description}");
+            }
+            itemDescriptions.Add("Exit");
+            return itemDescriptions.ToArray();
+        }
+
         public void DisplayItems()
         {
             Console.WriteLine("\n=== Stat Trade Shop ===");

@@ -37,6 +37,17 @@ namespace OOP_Kelompok2
             Console.WriteLine($"{item.Name} removed from inventory after use.");
         }
 
+        public string[] GetInventoryItems()
+        {
+            List<string> itemDescriptions = new List<string>();
+            for (int i = 0; i < _items.Count; i++)
+            {
+                itemDescriptions.Add($"{_items[i].Name} - {_items[i].Description}");
+            }
+            itemDescriptions.Add("Exit");
+            return itemDescriptions.ToArray();
+        }
+
         public void DisplayInventory()
         {
             Console.WriteLine("\n=== Inventory ===");

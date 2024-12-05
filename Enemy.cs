@@ -6,12 +6,35 @@ namespace OOP_Kelompok2
         public int Heart { get; set; }
         public int AttackPower { get; set; }
         public int Exp { get; set; }
+        public int HitRate { get; set; }
+        public int Luck { get; set; }
         public Emotion EmotionType { get; set; }
         public bool IsStunned { get; set; } = false;
+        public Random _random = new Random();
 
         public void AttackPlayer(Player player)
         {
+            if (IsStunned)
+            {
+                Console.WriteLine($"{Name} is stunned and cannot attack!");
+                IsStunned = false;
+                return;
+            }
+
+            if (_random.Next(0, 100) > HitRate)
+            {
+                Console.WriteLine($"{Name} misses the attack!");
+                return;
+            }
+        
             int damage = EmotionDamageCalculator.CalculateDamage(AttackPower, EmotionType, player.EmotionType);
+
+            if (_random.Next(0, 100) < Luck)
+            {
+                damage *= 2;
+                Console.WriteLine("Critical Hit!");
+            }
+
             Console.WriteLine($"{Name} attacks {player.Name}!");
             player.Heart -= damage;
             Console.WriteLine($"{player.Name} takes {damage} damage. Remaining Health: {player.Heart}");
