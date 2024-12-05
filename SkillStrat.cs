@@ -9,6 +9,7 @@ namespace OOP_Kelompok2
         void Execute(Player player, Enemy enemy); // Executes the skill
         void Message(Player player, Enemy enemy); // Displays skill message
         int GetCost(); // Method to get the cost of the skill
+        bool IsTargetEnemy(); // Method to get the skill type
     }
 
     // DoubleSlash Skill
@@ -42,6 +43,7 @@ namespace OOP_Kelompok2
         }
 
         public int GetCost() => Cost; // Implement GetCost() to return the cost of the skill
+        public bool IsTargetEnemy() => true;
     }
 
     // Heal Skill
@@ -75,6 +77,7 @@ namespace OOP_Kelompok2
         }
 
         public int GetCost() => Cost; // Implement GetCost() to return the cost of the skill
+        public bool IsTargetEnemy() => false;
     }
 
     // Annoy Skill
@@ -108,6 +111,7 @@ namespace OOP_Kelompok2
         }
 
         public int GetCost() => Cost; // Implement GetCost() to return the cost of the skill
+        public bool IsTargetEnemy() => true;
     }
 
     // Calm Skill
@@ -140,5 +144,6 @@ namespace OOP_Kelompok2
         }
 
         public int GetCost() => Cost; // Implement GetCost() to return the cost of the skill
+        public bool IsTargetEnemy() => false;
     }
 }

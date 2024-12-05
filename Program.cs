@@ -42,8 +42,8 @@ namespace OOP_Kelompok2
             
             player1 = new PlayerBuild()
                         .AddName("Dreamer")
-                        .AddHeart(100)
-                        .AddJuice(50)
+                        .AddMaxHeart(100)
+                        .AddJuice(100)
                         .AddAttack(20)
                         .AddDefense(15)
                         .AddSpeed(10)

@@ -32,6 +32,7 @@ namespace OOP_Kelompok2
                 }
 
                 var selectedSkill = _skills[choice - 1];
+                var isTargetEnemy = selectedSkill.IsTargetEnemy();
 
                 if (player.Juice < selectedSkill.GetCost())
                 {
@@ -39,22 +40,27 @@ namespace OOP_Kelompok2
                 }
                 else
                 {
-                    // Ask player to choose the enemy for the skill
-                    Console.WriteLine("Select an enemy to target (or enter 0 to cancel):");
-                    for (int i = 0; i < enemies.Count; i++)
+                    if (isTargetEnemy)
                     {
-                        Console.WriteLine($"{i + 1}. {enemies[i].Name}");
-                    }
+                        // Ask player to choose the enemy for the skill
+                        Console.WriteLine("Select an enemy to target (or enter 0 to cancel):");
+                        for (int i = 0; i < enemies.Count; i++)
+                        {
+                            Console.WriteLine($"{i + 1}. {enemies[i].Name}");
+                        }
 
-                    int enemyChoice = GetValidInput(0, enemies.Count);
-                    if (enemyChoice == 0)
+                        int enemyChoice = GetValidInput(0, enemies.Count);
+                        if (enemyChoice == 0)
+                        {
+                            Console.WriteLine("Action canceled.");
+                            return false; // Return false to indicate the action was canceled
+                        }
+                        // Execute the selected skill on the chosen enemy
+                        _battleSystem.ExecuteSkillStrategy(player, enemyChoice - 1, selectedSkill);
+                    }else
                     {
-                        Console.WriteLine("Action canceled.");
-                        return false; // Return false to indicate the action was canceled
+                        _battleSystem.ExecuteSkillStrategy(player, 0, selectedSkill);
                     }
-
-                    // Execute the selected skill on the chosen enemy
-                    _battleSystem.ExecuteSkillStrategy(player, enemyChoice - 1, selectedSkill);
                     return true; // Return true to indicate a skill was successfully used
                 }
             }

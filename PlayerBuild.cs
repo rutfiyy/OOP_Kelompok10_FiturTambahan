@@ -30,9 +30,10 @@ namespace OOP_Kelompok2
             return this;
         }
 
-        public PlayerBuild AddHeart(int heart)
+        public PlayerBuild AddMaxHeart(int maxHeart)
         {
-            player.Heart = heart;
+            player.MaxHeart = maxHeart;
+            player.Heart = maxHeart;
             return this;
         }
 
