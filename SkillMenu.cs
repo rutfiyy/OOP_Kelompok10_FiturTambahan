@@ -43,14 +43,20 @@ namespace OOP_Kelompok2
                     if (isTargetEnemy)
                     {
                         // Ask player to choose the enemy for the skill
-                        Console.WriteLine("Select an enemy to target (or enter 0 to cancel):");
+                        List<string> skillOptionsList = new List<string>();
+                        string prompt = "Select an enemy to attack (or enter 0 to cancel):";
+                        
                         for (int i = 0; i < enemies.Count; i++)
                         {
-                            Console.WriteLine($"{i + 1}. {enemies[i].Name}");
+                            skillOptionsList.Add(enemies[i].Name);
                         }
+                        skillOptionsList.Add("Exit");
 
-                        int enemyChoice = GetValidInput(0, enemies.Count);
-                        if (enemyChoice == 0)
+                        string[] skillOptions = skillOptionsList.ToArray();
+                        Menu attackMenu = new Menu(prompt, skillOptions);
+                        int enemyChoice = attackMenu.Run();
+
+                        if (enemyChoice == enemies.Count)
                         {
                             Console.WriteLine("Action canceled.");
                             return false; // Return false to indicate the action was canceled

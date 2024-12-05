@@ -12,7 +12,10 @@ namespace OOP_Kelompok2
             _itemsForSale = new List<IItem>
             {
                 new BuffPotion(),
-                new HealthBuffPotion()
+                new HealthBuffPotion(),
+                new HappyCandy(),
+                new SadCandy(),
+                new AngryCandy()
             };
         }
 

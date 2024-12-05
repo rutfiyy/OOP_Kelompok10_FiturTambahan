@@ -6,29 +6,40 @@ namespace OOP_Kelompok2
         {
             int damage = baseDamage;
 
-            if (attackerEmotion == Emotion.Happy && targetEmotion == Emotion.Angry)
+            switch (attackerEmotion)
             {
-                damage *= 2; // Double damage
-            }
-            else if (attackerEmotion == Emotion.Angry && targetEmotion == Emotion.Happy)
-            {
-                damage /= 2; // Half damage
-            }
-            else if (attackerEmotion == Emotion.Angry && targetEmotion == Emotion.Sad)
-            {
-                damage *= 2; // Double damage
-            }
-            else if (attackerEmotion == Emotion.Sad && targetEmotion == Emotion.Angry)
-            {
-                damage /= 2; // Half damage
-            }
-            else if (attackerEmotion == Emotion.Sad && targetEmotion == Emotion.Happy)
-            {
-                damage *= 2; // Double damage
-            }
-            else if (attackerEmotion == Emotion.Happy && targetEmotion == Emotion.Sad)
-            {
-                damage /= 2; // Half damage
+                case Emotion.Happy:
+                    if (targetEmotion == Emotion.Angry)
+                    {
+                        damage *= 2; // Double damage
+                    }
+                    else if (targetEmotion == Emotion.Sad)
+                    {
+                        damage /= 2; // Half damage
+                    }
+                    break;
+
+                case Emotion.Angry:
+                    if (targetEmotion == Emotion.Happy)
+                    {
+                        damage /= 2; // Half damage
+                    }
+                    else if (targetEmotion == Emotion.Sad)
+                    {
+                        damage *= 2; // Double damage
+                    }
+                    break;
+
+                case Emotion.Sad:
+                    if (targetEmotion == Emotion.Happy)
+                    {
+                        damage *= 2; // Double damage
+                    }
+                    else if (targetEmotion == Emotion.Angry)
+                    {
+                        damage /= 2; // Half damage
+                    }
+                    break;
             }
 
             return damage;

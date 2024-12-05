@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using static System.Console;
 
 namespace OOP_Kelompok2
 {
@@ -15,14 +16,12 @@ namespace OOP_Kelompok2
 
         public static void Introduction(Player player)
         {
-            Console.WriteLine("\n=== Introduction ===");
-            Console.WriteLine("You find yourself in a surreal dreamscape. Shadows flicker, and voices call to you...");
-            Console.WriteLine("Choose your reaction:");
-            Console.WriteLine("1. Follow the voices.");
-            Console.WriteLine("2. Ignore them and explore the dark corners.");
-            int choice = GetValidInput(1, 2);
+            string prompt = "\n=== Introduction ===\nYou find yourself in a surreal dreamscape. Shadows flicker, and voices call to you...";
+            string[] options = { "Follow the voices.", "Ignore them and explore the dark corners."};
+            Menu storyMenu = new Menu(prompt, options);
+            int choice = storyMenu.Run();
 
-            if (choice == 1)
+            if (choice == 0)
             {
                 Console.WriteLine("\nYou follow the voices, feeling a strange sense of comfort.");
                 player.EmotionType = Emotion.Happy;
@@ -34,18 +33,18 @@ namespace OOP_Kelompok2
                 player.Heart -= 5;
                 Console.WriteLine("Health decreased by -5. Current Health: " + player.Heart);
             }
+
+            Console.WriteLine("Press Enter to continue...");
+            Console.ReadLine();
         }
 
         public static void StoryPath(Player player, int round)
         {
-            Console.WriteLine("\n=== Story Path ===");
-            Console.WriteLine("After wandering, you encounter a forked path in the dreamscape.");
-            foreach (var path in _storyPaths)
-            {
-                Console.WriteLine($"{path.Key}. {path.Value.PathDescription}");
-            }
+            string prompt = "\n=== Story Path ===\nAfter wandering, you encounter a forked path in the dreamscape.";
+            string[] options = { "Approach the broken clock tower", "Enter the desolate flower field", "Cross the foggy bridge"};
+            Menu pathMenu = new Menu(prompt, options);
+            int choice = pathMenu.Run();
 
-            int choice;
             if (round == 2) 
             {
                 Console.WriteLine("4. Negotiate with the souls of the lost."); 
@@ -65,6 +64,8 @@ namespace OOP_Kelompok2
             {
                 var selectedPath = _storyPaths[choice];
                 Console.WriteLine($"\nYou chose to {selectedPath.PathDescription.ToLower()}.");
+                Console.WriteLine("Press Enter to continue...");
+                Console.ReadLine();
 
                 // Create the enemy based on the selected path
                 List<Enemy> enemies = EnemyFactory.CreateEnemies(selectedPath.EnemyNames);
@@ -92,6 +93,8 @@ namespace OOP_Kelompok2
         private static void StartBattle(Player player, List<Enemy> enemies, bool isFinalBattle = false)
         {
             Console.WriteLine("\n=== Battle Start ===");
+            Console.WriteLine("Press Enter to continue...");
+            Console.ReadLine();
 
             BattleSystem battleSystem = new BattleSystem(player, enemies, new List<ISkillStrategy>
             {
@@ -114,32 +117,33 @@ namespace OOP_Kelompok2
             while (battleOngoing)
             {
                 // Display health status
-                Console.WriteLine($"\n{player.Name.ToUpper()} Heart: {player.Heart}, Juice: {player.Juice}, Emotion: {player.EmotionType}\nEnemies: ");
+                String prompt = $"\n{player.Name.ToUpper()} Heart: {player.Heart}, Juice: {player.Juice}, Emotion: {player.EmotionType}\nEnemies: ";
                 foreach (var enemy in enemies)
                 {
-                    Console.WriteLine($"{enemy.Name.ToUpper()} Heart: {enemy.Heart}, Emotion: {enemy.EmotionType}");
+                    prompt += $"{enemy.Name.ToUpper()} Heart: {enemy.Heart}, Emotion: {enemy.EmotionType}";
                 }
 
-                Console.WriteLine("\nChoose an action:");
-                Console.WriteLine("1. Attack");
-                Console.WriteLine("2. Skill");
-                Console.WriteLine("3. Use Item from Inventory");
-                Console.WriteLine("4. Escape");
-
-                int choice = GetValidInput(1, 4);
+                prompt += "\nChoose an action:";
+                string[] options = { "Attack", "Skill", "Use Item from Inventory", "Escape"};
+                Menu battleMenu = new Menu(prompt, options);
+                int choice = battleMenu.Run();
 
                 switch (choice)
                 {
-                    case 1:
+                    case 0:
                         // Select which enemy to attack (with exit option)
-                        Console.WriteLine("Select an enemy to attack (or enter 0 to cancel):");
+                        List<string> attackOptionsList = new List<string>();
+                        prompt = ("Select an enemy to attack (or enter 0 to cancel):");
                         for (int i = 0; i < enemies.Count; i++)
                         {
-                            Console.WriteLine($"{i + 1}. {enemies[i].Name}");
+                            attackOptionsList.Add(enemies[i].Name);
                         }
+                        attackOptionsList.Add("Exit");
 
-                        int enemyChoice = GetValidInput(0, enemies.Count);
-                        if (enemyChoice == 0)
+                        string[] attackOptions = attackOptionsList.ToArray();
+                        Menu attackMenu = new Menu(prompt, attackOptions);
+                        int enemyChoice = attackMenu.Run();
+                        if (enemyChoice == enemies.Count)
                         {
                             Console.WriteLine("Action canceled.");
                             continue; // Return to the main menu
@@ -148,7 +152,7 @@ namespace OOP_Kelompok2
                         battleSystem.ExecuteAttackStrategy(enemyChoice - 1); // Attack the selected enemy
                         break;
 
-                    case 2:
+                    case 1:
                         bool skillUsed = skillMenu.Display(player, enemies); // Open skill menu and check if a skill was used
                         if (!skillUsed)
                         {
@@ -156,11 +160,11 @@ namespace OOP_Kelompok2
                         }
                         break;
 
-                    case 3:
+                    case 2:
                         Program.UseInventoryItem(); // Placeholder for inventory item usage
                         continue;
 
-                    case 4:
+                    case 3:
                         Console.WriteLine("You escaped the battle.");
                         return;
 
@@ -168,6 +172,9 @@ namespace OOP_Kelompok2
                         Console.WriteLine("Invalid choice! Please select a valid option.");
                         break;
                 }
+
+                Console.WriteLine("Press Enter to continue...");
+                Console.ReadLine();
 
                 // Check if all enemies are defeated
                 if (battleSystem.AreAllEnemiesDefeated())
