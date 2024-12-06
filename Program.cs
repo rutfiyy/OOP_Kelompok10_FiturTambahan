@@ -43,9 +43,9 @@ namespace OOP_Kelompok2
             player1 = new PlayerBuild()
                         .AddName("Dreamer")
                         .AddMaxHeart(100)
-                        .AddJuice(100)
+                        .AddMaxJuice(100)
                         .AddAttack(20)
-                        .AddDefense(15)
+                        .AddDefense(8)
                         .AddSpeed(10)
                         .AddLuck(5)
                         .AddHitRate(90)
@@ -62,8 +62,18 @@ namespace OOP_Kelompok2
         {
             for (int round = 1; round < 4; round++)
             {
+                if (!player1.isAlive)
+                {
+                    Console.WriteLine("You have been defeated. Game over.");
+                    return;
+                } 
                 Story.StoryPath(player1, round);
             }      
+            if (!player1.isAlive)
+            {
+                Console.WriteLine("You have been defeated. Game over.");
+                return;
+            } 
             Story.FinalBossEncounter(player1);
         }
 

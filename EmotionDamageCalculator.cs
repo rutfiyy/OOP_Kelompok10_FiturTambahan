@@ -44,5 +44,47 @@ namespace OOP_Kelompok2
 
             return damage;
         }
+
+        public static string AttackEffect(Emotion attackerEmotion, Emotion targetEmotion)
+        {
+            string effect = null;
+            switch (attackerEmotion)
+            {
+                case Emotion.Happy:
+                    if (targetEmotion == Emotion.Angry)
+                    {
+                        effect = "It was effective!";
+                    }
+                    else if (targetEmotion == Emotion.Sad)
+                    {
+                        effect = "It wasn't effective!";
+                    }
+                    break;
+
+                case Emotion.Angry:
+                    if (targetEmotion == Emotion.Happy)
+                    {
+                        effect = "It wasn't effective!";
+                    }
+                    else if (targetEmotion == Emotion.Sad)
+                    {
+                        effect = "It was effective!";
+                    }
+                    break;
+
+                case Emotion.Sad:
+                    if (targetEmotion == Emotion.Happy)
+                    {
+                        effect = "It was effective!";
+                    }
+                    else if (targetEmotion == Emotion.Angry)
+                    {
+                        effect = "It wasn't effective!";
+                    }
+                    break;
+            }
+
+            return effect;
+        }
     }
 }

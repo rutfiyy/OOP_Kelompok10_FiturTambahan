@@ -88,13 +88,9 @@ namespace OOP_Kelompok2
 
         private static void StartBattle(Player player, List<Enemy> enemies, bool isFinalBattle = false)
         {
-            Console.WriteLine("\n=== Battle Start ===");
-            Console.WriteLine("Press Enter to continue...");
-            Console.ReadLine();
-
             BattleSystem battleSystem = new BattleSystem(player, enemies, new List<ISkillStrategy>
             {
-                new DoubleSlash(),
+                new Pierce(),
                 new Heal(),
                 new Annoy(),
                 new Calm()
@@ -102,21 +98,26 @@ namespace OOP_Kelompok2
 
             SkillMenu skillMenu = new SkillMenu(battleSystem, new List<ISkillStrategy>
             {
-                new DoubleSlash(),
+                new Pierce(),
                 new Heal(),
                 new Annoy(),
                 new Calm()
             });
 
             bool battleOngoing = true;
+            int expReward = 0;
+            foreach (var enemy in enemies)
+            {
+                expReward += enemy.Exp;
+            }
 
             while (battleOngoing)
             {
                 // Display health status
-                String prompt = $"\n{player.Name.ToUpper()} Heart: {player.Heart}, Juice: {player.Juice}, Emotion: {player.EmotionType}\nEnemies: ";
+                String prompt = $"\n=== Battle Start ===\n{player.Name.ToUpper()} Heart: {player.Heart}, Juice: {player.Juice}, Emotion: {player.EmotionType}\nEnemies: ";
                 foreach (var enemy in enemies)
                 {
-                    prompt += $"{enemy.Name.ToUpper()} Heart: {enemy.Heart}, Emotion: {enemy.EmotionType}";
+                    prompt += $"\n{enemy.Name.ToUpper()} Heart: {enemy.Heart}, Emotion: {enemy.EmotionType}";
                 }
 
                 prompt += "\nChoose an action:";
@@ -129,7 +130,7 @@ namespace OOP_Kelompok2
                     case 0:
                         // Select which enemy to attack (with exit option)
                         List<string> attackOptionsList = new List<string>();
-                        prompt = ("Select an enemy to attack (or enter 0 to cancel):");
+                        prompt = "Select an enemy to attack (or enter 0 to cancel):";
                         for (int i = 0; i < enemies.Count; i++)
                         {
                             attackOptionsList.Add(enemies[i].Name);
@@ -178,9 +179,6 @@ namespace OOP_Kelompok2
                         break;
                 }
 
-                Console.WriteLine("Press Enter to continue...");
-                Console.ReadLine();
-
                 // Check if all enemies are defeated
                 if (battleSystem.AreAllEnemiesDefeated())
                 {
@@ -204,7 +202,7 @@ namespace OOP_Kelompok2
                 // Check if the player is defeated
                 if (player.Heart <= 0)
                 {
-                    Console.WriteLine("You have been defeated. Game over.");
+                    player.isAlive = false;
                     battleOngoing = false;
                 }
 
@@ -220,6 +218,9 @@ namespace OOP_Kelompok2
                         }
                     }
                 }
+
+                Console.WriteLine("Press Enter to continue...");
+                Console.ReadLine();
             }
 
             // Award experience points for defeated enemies
@@ -232,13 +233,7 @@ namespace OOP_Kelompok2
             }
             else
             {
-                foreach (var enemy in enemies)
-                {
-                    if (enemy.Heart <= 0)
-                    {
-                        player.GainExp(enemy.Exp); // Award EXP after defeating an enemy
-                    }
-                }
+                player.GainExp(expReward); // Award EXP after defeating an enemy
             }
         }
 
@@ -246,7 +241,7 @@ namespace OOP_Kelompok2
         {
             Random random = new Random();
             int escapeChance = random.Next(0, 100);
-            return escapeChance < player.Luck;
+            return escapeChance < player.Speed;
         }
     }
 }

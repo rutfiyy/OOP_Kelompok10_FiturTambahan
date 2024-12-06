@@ -5,6 +5,7 @@ namespace OOP_Kelompok2
         public string? Name { get; set; }
         public int MaxHeart { get; set; }
         public int Heart { get; set; }
+        public int MaxJuice { get; set; }
         public int Juice { get; set; }
         public int Attack { get; set; }
         public int Defense { get; set; }
@@ -15,6 +16,7 @@ namespace OOP_Kelompok2
         public int Exp { get; set; } = 0;
         public Emotion EmotionType { get; set; } = Emotion.Neutral;
         private Random _random = new Random();
+        public bool isAlive = true;
 
         public void AttackEnemy(Enemy enemy)
         {
@@ -25,14 +27,16 @@ namespace OOP_Kelompok2
             }
 
             int damage = EmotionDamageCalculator.CalculateDamage(Attack, EmotionType, enemy.EmotionType);
+            string addMessage = EmotionDamageCalculator.AttackEffect(EmotionType, enemy.EmotionType);
 
+            Console.WriteLine($"{Name} attacks {enemy.Name}. {addMessage}");
             if (_random.Next(0, 100) < Luck) // Critical hit chance
             {
                 damage *= 2;
                 Console.WriteLine("Critical Hit!");
             }
 
-            Console.WriteLine($"{Name} attacks {enemy.Name}!");
+            damage = Math.Max(damage - enemy.Defense, 5);
             enemy.Heart = Math.Max(enemy.Heart - damage, 0); // Subtract calculated damage from enemy's health
             Console.WriteLine($"{enemy.Name} takes {damage} damage. Remaining Health: {enemy.Heart}");
         }
@@ -54,14 +58,20 @@ namespace OOP_Kelompok2
             {
                 Exp -= Level * 10;
                 Level++;
-                Heart += 10;
-                Juice += 5;
+                MaxHeart += 10;
+                Heart = MaxHeart;
+                MaxJuice += 5;
+                Juice = MaxJuice;
                 Attack += 2;
                 Defense += 2;
+                Speed += 5;
+                Luck += 3;
+                HitRate += 2;
                 
                 Console.WriteLine($"{Name} leveled up! Now at Level {Level} with enhanced attributes.");
             }
-            
+            Console.WriteLine("Press Enter to continue...");
+            Console.ReadLine();
         }
 
         public void DisplayStatus()

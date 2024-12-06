@@ -5,6 +5,7 @@ namespace OOP_Kelompok2
         public string? Name { get; set; }
         public int Heart { get; set; }
         public int AttackPower { get; set; }
+        public int Defense { get; set; }
         public int Exp { get; set; }
         public int HitRate { get; set; }
         public int Luck { get; set; }
@@ -28,15 +29,17 @@ namespace OOP_Kelompok2
             }
         
             int damage = EmotionDamageCalculator.CalculateDamage(AttackPower, EmotionType, player.EmotionType);
+            string addMessage = EmotionDamageCalculator.AttackEffect(EmotionType, player.EmotionType);
+
+            Console.WriteLine($"{Name} attacks {player.Name}. {addMessage}");
 
             if (_random.Next(0, 100) < Luck)
             {
                 damage *= 2;
                 Console.WriteLine("Critical Hit!");
             }
-
-            Console.WriteLine($"{Name} attacks {player.Name}!");
-            player.Heart -= damage;
+            damage = Math.Max(damage - player.Defense, 5);
+            player.Heart = Math.Max(player.Heart - damage, 0); // Subtract calculated damage from player health
             Console.WriteLine($"{player.Name} takes {damage} damage. Remaining Health: {player.Heart}");
         }
 

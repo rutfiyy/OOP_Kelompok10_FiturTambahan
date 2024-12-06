@@ -37,9 +37,10 @@ namespace OOP_Kelompok2
             return this;
         }
 
-        public PlayerBuild AddJuice(int juice)
+        public PlayerBuild AddMaxJuice(int maxJuice)
         {
-            player.Juice = juice;
+            player.MaxJuice = maxJuice;
+            player.Juice = maxJuice;
             return this;
         }
 

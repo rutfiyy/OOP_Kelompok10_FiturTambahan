@@ -13,9 +13,9 @@ namespace OOP_Kelompok2
             {
                 new BuffPotion(),
                 new HealthBuffPotion(),
-                new HappyCandy(),
-                new SadCandy(),
-                new AngryCandy()
+                new EmotionChangerDecorator(new HappyCandy(), "Happy"),
+                new EmotionChangerDecorator(new SadCandy(), "Sad"),
+                new EmotionChangerDecorator(new AngryCandy(), "Angry")
             };
         }
 
@@ -49,6 +49,7 @@ namespace OOP_Kelompok2
 
             IItem item = _itemsForSale[index];
             inventory.AddItem(item);
+            _itemsForSale.Remove(item);
             Console.WriteLine($"{item.Name} bought and added to inventory.");
         }
 

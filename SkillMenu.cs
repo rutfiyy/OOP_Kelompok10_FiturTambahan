@@ -20,7 +20,7 @@ namespace OOP_Kelompok2
                 List<string> skillOptionsList = new List<string>();
                 for (int i = 0; i < _skills.Count; i++)
                 {
-                    skillOptionsList.Add($"{_skills[i].GetType().Name} - Juice Cost: {_skills[i].GetCost()}");
+                    skillOptionsList.Add($"{_skills[i].GetType().Name} - Juice Cost: {_skills[i].GetCost()} - {_skills[i].Description()}");
                 }
                 skillOptionsList.Add("Exit");
 
