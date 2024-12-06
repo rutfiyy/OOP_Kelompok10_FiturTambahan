@@ -56,16 +56,19 @@ namespace OOP_Kelompok2
             switch (EmotionType)
             {
                 case Emotion.Angry:
-                    Console.WriteLine($"{Name} become Angry! Attack power increased!");
-                    AttackPower += 5;
+                    Console.WriteLine($"{Name} become Angry! Attack power increased but defense reduced.");
+                    AttackPower = (int)(AttackPower * 1.3);
+                    Defense = (int)(Defense * 0.5);
                     break;
                 case Emotion.Sad:
                     Console.WriteLine($"{Name} become Sad. Defense increased but attack reduced.");
-                    Heart += 10;
-                    AttackPower -= 2;
+                    Defense = (int)(Defense * 1.25);
+                    AttackPower = (int)(AttackPower * 0.65);
                     break;
                 case Emotion.Happy:
-                    Console.WriteLine($"{Name} become Happy! Faster speed and higher chance to crit.");
+                    Console.WriteLine($"{Name} become Happy! higher chance to crit but lower hit rate.");
+                    Luck *= 2;
+                    HitRate -= 10;
                     break;
                 case Emotion.Neutral:
                     Console.WriteLine($"{Name} calms down. No special effects.");
