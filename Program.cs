@@ -95,24 +95,33 @@ namespace OOP_Kelompok2
 
         public static void ShowStatTradeShop()
         {
-            StatTradeShop statTradeShop = new StatTradeShop();
-            bool shopping = true;
+            StatTradeTreasure statTradeTreasure = new StatTradeTreasure();
+            bool treasure = true;
+            int itemsBrought = 0;
+            const int maxItems = 3;
 
-            while (shopping)
+            while (treasure)
             {
-                string[] itemsForSale = statTradeShop.GetItemsForSale();
-                Menu statTradeShopMenu = new Menu("\nChoose an item to buy", itemsForSale);
-                statTradeShop.DisplayItems();
-                int choice = statTradeShopMenu.Run();
-
-                if (choice == itemsForSale.Length - 1)
+                if (itemsBrought >= maxItems)
                 {
-                    shopping = false;
+                    Console.WriteLine("You have reached the maximum number of items you can buy");
+                    break;
+                }
+                
+                string[] treasureForGet = statTradeTreasure.GetTreasure();
+                Menu statTradeTreasureMenu = new Menu($"\nChoose treasure (Max 3 treasure) :\n{maxItems - itemsBrought} Left", treasureForGet);
+                statTradeTreasure.DisplayItems();
+                int choice = statTradeTreasureMenu.Run();
+
+                if (choice == treasureForGet.Length - 1)
+                {
+                    treasure = false;
                     Console.WriteLine("Exiting stat trade shop.");
                 }
                 else
                 {
-                    statTradeShop.BuyItem(choice, player1, inventory);
+                    statTradeTreasure.BuyItem(choice, player1, inventory);
+                    itemsBrought++;
                 }
             }
         }
