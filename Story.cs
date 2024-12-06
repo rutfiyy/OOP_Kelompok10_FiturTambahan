@@ -6,13 +6,13 @@ namespace OOP_Kelompok2
 {
     public class Story
     {
-        private static readonly Dictionary<int, (string PathDescription, List<string> EnemyNames)> _storyPaths =
-            new()
-            {
-                { 1, ("Approach the broken clock tower", new List<string> {"space ex"}) },
-                { 2, ("Enter the desolate flower field", new List<string> {"lost petal", "lost petal"}) },
-                { 3, ("Cross the foggy bridge", new List<string> {"haunting shade", "haunting shade", "haunting shade"}) }
-            };
+        private static List<(string PathDescription, List<string> EnemyNames)> _storyPaths = new()
+        {
+            ("Approach the broken clock tower", new List<string> { "space ex" }),
+            ("Enter the desolate flower field", new List<string> { "lost petal", "lost petal" }),
+            ("Cross the foggy bridge", new List<string> { "haunting shade", "haunting shade", "haunting shade" }),
+            ("Attempt to negotiate with the lost souls.", null)
+        };
 
         public static void Introduction(Player player)
         {
@@ -34,37 +34,67 @@ namespace OOP_Kelompok2
                 Console.WriteLine("Health decreased by -5. Current Health: " + player.Heart);
             }
 
-            Console.WriteLine("Press Enter to continue...");
+            ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\nPress Enter to continue...");
             Console.ReadLine();
+            ResetColor();
         }
 
-        public static void StoryPath(Player player, int round)
+        public static void StoryLine(Player player)
         {
             string prompt = "\n=== Story Path ===\nAfter wandering, you encounter a forked path in the dreamscape.";
-            List<string> options = new List<string>{ "Approach the broken clock tower", "Enter the desolate flower field", "Cross the foggy bridge"};
+            List<string> options = new List<string> { "Approach the broken clock tower", "Enter the desolate flower field", "Cross the foggy bridge" };
+            int maxRound = 5;
 
-            if (round == 2) 
+            for (int round = 0; round < maxRound; round++)
             {
-                options.Add("Negotiate with the souls of the lost");
+                if (player.isAlive)
+                {
+                    // Add mid-game path
+                    if (round == maxRound / 2)
+                    {
+                        options.Add("Negotiate with the souls of the lost");
+                    }
+
+                    if (options.Count == 0)
+                    {
+                        FinalBossEncounter(player);
+                        return;
+                    }
+
+                    // Display paths
+                    Menu pathMenu = new Menu(prompt, options.ToArray());
+                    int choice = pathMenu.Run();
+
+                    StoryPath(player, choice);
+
+                    // Remove chosen option
+                    _storyPaths.RemoveAt(choice);
+                    options.RemoveAt(choice);
+                }
+                else
+                {
+                    Console.WriteLine("You have been defeated. Game over.");
+                    return;
+                }
             }
-            
-            Menu pathMenu = new Menu(prompt, options.ToArray());
-            int choice = pathMenu.Run();
-
-            if (choice == 3)
+        }
+        public static void StoryPath(Player player, int choice)
+        {    
+            var selectedPath = _storyPaths[choice];
+            Console.WriteLine($"\nYou chose to {selectedPath.PathDescription.ToLower()}.");
+            ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\nPress Enter to continue...");
+            Console.ReadLine();
+            ResetColor();
+            if (selectedPath.EnemyNames == null)
             {
-                Console.WriteLine("\nYou attempt to negotiate with the lost souls.");
                 Console.WriteLine("\nThe souls offer you a trade.");
                 Program.ShowStatTradeShop();
                 return;
             }
             else 
             {
-                var selectedPath = _storyPaths[choice + 1];
-                Console.WriteLine($"\nYou chose to {selectedPath.PathDescription.ToLower()}.");
-                Console.WriteLine("Press Enter to continue...");
-                Console.ReadLine();
-
                 // Create the enemy based on the selected path
                 List<Enemy> enemies = EnemyFactory.CreateEnemies(selectedPath.EnemyNames);
 
@@ -213,14 +243,16 @@ namespace OOP_Kelompok2
                     {
                         if (!enemy.IsStunned)
                         {
-                            Console.WriteLine($"{enemy.Name} uses a special attack, reducing your attack power!");
-                            player.Attack = Math.Max(player.Attack - 5, 5);
+                            Console.WriteLine($"{enemy.Name} uses a special move, increasing defense!");
+                            enemy.Defense += 5;
                         }
                     }
                 }
 
-                Console.WriteLine("Press Enter to continue...");
+                ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nPress Enter to continue...");
                 Console.ReadLine();
+                ResetColor();
             }
 
             // Award experience points for defeated enemies

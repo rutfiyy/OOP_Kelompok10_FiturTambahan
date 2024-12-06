@@ -60,21 +60,7 @@ namespace OOP_Kelompok2
 
         static void Update()
         {
-            for (int round = 1; round < 4; round++)
-            {
-                if (!player1.isAlive)
-                {
-                    Console.WriteLine("You have been defeated. Game over.");
-                    return;
-                } 
-                Story.StoryPath(player1, round);
-            }      
-            if (!player1.isAlive)
-            {
-                Console.WriteLine("You have been defeated. Game over.");
-                return;
-            } 
-            Story.FinalBossEncounter(player1);
+            Story.StoryLine(player1);
         }
 
         public static void UseInventoryItem()

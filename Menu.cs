@@ -35,10 +35,14 @@ namespace OOP_Kelompok2
                     ForegroundColor = ConsoleColor.White;
                     BackgroundColor = ConsoleColor.Black;
                 }
-                WriteLine($"{prefix} [{currentOption}]");
+                Write($"{prefix} [{currentOption}]");
+                ResetColor();
+                WriteLine("");
             }
+            ForegroundColor = ConsoleColor.Yellow;
+            WriteLine("\nPress Enter to confirm your choice.");
             ResetColor();
-            WriteLine("Press Enter to confirm your choice.");
+            
         }
 
         public int Run()
